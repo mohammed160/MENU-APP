@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>لوحة التحكم | Menu dashboard</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@500;700;800;900&display=swap">
+<link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+<section id="login" class="login" hidden>
+  <form id="loginForm" class="card login-card">
+    <h1>لوحة التحكم</h1>
+    <p>سجّل الدخول لتعديل المنيو</p>
+    <label>كلمة المرور<input type="password" id="pw" autocomplete="current-password" required autofocus></label>
+    <p class="err" id="loginErr" role="alert"></p>
+    <button class="btn primary" type="submit">دخول</button>
+  </form>
+</section>
+
+<div id="app" hidden>
+  <header class="top">
+    <div class="top-in">
+      <h1>لوحة التحكم</h1>
+      <div class="top-actions">
+        <a class="btn" href="/" target="_blank" rel="noopener">عرض المنيو</a>
+        <button class="btn primary" id="saveBtn" disabled>حفظ التغييرات</button>
+        <button class="btn ghost" id="logoutBtn">خروج</button>
+      </div>
+    </div>
+    <nav class="tabs" id="tabs" role="tablist" aria-label="أقسام المنيو"></nav>
+  </header>
+  <main class="content" id="content"></main>
+</div>
+
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<script src="admin.js"></script>
+</body>
+</html>

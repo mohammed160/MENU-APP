@@ -1,0 +1,234 @@
+{
+  "nextNumber": 1003,
+  "orders": [
+    {
+      "id": "acad570d71",
+      "number": 1002,
+      "createdAt": "2026-09-30T13:13:51.822Z",
+      "updatedAt": "2026-09-30T13:13:51.822Z",
+      "status": "new",
+      "history": [
+        {
+          "status": "new",
+          "at": "2026-09-30T13:13:51.822Z"
+        }
+      ],
+      "type": "delivery",
+      "customer": {
+        "name": "Mohammed Ghanem",
+        "phone": "201061960520",
+        "address": "Elmasaken Sherkah",
+        "zoneId": "zone-amg1nu",
+        "zoneName": "سموحة",
+        "branchId": "branch-kafr-eldawar",
+        "branchName": "فرع 1 كفرالدوار",
+        "branchWhatsapp": "201061960520"
+      },
+      "lines": [
+        {
+          "en": "Veggie",
+          "ar": "فيجن",
+          "detailAr": "كبير",
+          "detailMsg": "Large",
+          "qty": 1,
+          "unit": 155,
+          "note": "",
+          "extras": []
+        }
+      ],
+      "subtotal": 155,
+      "deliveryFee": 20,
+      "total": 175,
+      "currency": "EGP",
+      "payment": "cod",
+      "paymentLabel": "كاش عند الاستلام",
+      "note": "",
+      "adjusted": false
+    },
+    {
+      "id": "2522fa4305",
+      "number": 1001,
+      "createdAt": "2026-09-30T13:05:34.015Z",
+      "updatedAt": "2026-09-30T13:07:01.477Z",
+      "status": "cancelled",
+      "history": [
+        {
+          "status": "new",
+          "at": "2026-09-30T13:05:34.015Z"
+        },
+        {
+          "status": "cancelled",
+          "at": "2026-09-30T13:07:01.477Z"
+        }
+      ],
+      "type": "delivery",
+      "customer": {
+        "name": "Mohammed Ghanem",
+        "phone": "201061960520",
+        "address": "Elmasaken Sherkah",
+        "zoneId": "zone-amg1nu",
+        "zoneName": "سموحة",
+        "branchId": "branch-kafr-eldawar",
+        "branchName": "فرع 1 كفرالدوار",
+        "branchWhatsapp": "201061960520"
+      },
+      "lines": [
+        {
+          "en": "Mix Cheese",
+          "ar": "ميكس تشيز",
+          "detailAr": "",
+          "detailMsg": "Family · Cheese stuffed",
+          "qty": 1,
+          "unit": 330,
+          "note": "",
+          "extras": [
+            {
+              "id": "extra-ranch",
+              "en": "Ranch",
+              "ar": "",
+              "price": 25
+            },
+            {
+              "id": "extra-texas",
+              "en": "Texas",
+              "ar": "",
+              "price": 25
+            }
+          ]
+        },
+        {
+          "en": "Margarita",
+          "ar": "مارجريتا",
+          "detailAr": "",
+          "detailMsg": "Family · Cheese stuffed",
+          "qty": 1,
+          "unit": 305,
+          "note": "",
+          "extras": [
+            {
+              "id": "extra-grilled-chicken",
+              "en": "Grilled Chicken",
+              "ar": "",
+              "price": 40
+            },
+            {
+              "id": "extra-sweet-chili",
+              "en": "Sweet Chili",
+              "ar": "",
+              "price": 25
+            }
+          ]
+        },
+        {
+          "en": "Chicken BBQ",
+          "ar": "تشكن باربيكيو",
+          "detailAr": "",
+          "detailMsg": "Family · Cheese stuffed",
+          "qty": 1,
+          "unit": 310,
+          "note": "",
+          "extras": []
+        },
+        {
+          "en": "Super Beef",
+          "ar": "سوبر بيف",
+          "detailAr": "كبير · حشو جبنة",
+          "detailMsg": "Large · Cheese stuffed",
+          "qty": 1,
+          "unit": 245,
+          "note": "",
+          "extras": []
+        },
+        {
+          "en": "Z Burger Pizza",
+          "ar": "زا برجر بيتزا",
+          "detailAr": "كبير",
+          "detailMsg": "Large",
+          "qty": 1,
+          "unit": 210,
+          "note": "",
+          "extras": []
+        },
+        {
+          "en": "Shrimp",
+          "ar": "جمبري",
+          "detailAr": "عائلي · حشو جبنة",
+          "detailMsg": "Family · Cheese stuffed",
+          "qty": 1,
+          "unit": 500,
+          "note": "",
+          "extras": []
+        },
+        {
+          "en": "Chicken BBQ",
+          "ar": "تشكن باربيكيو",
+          "detailAr": "كبير · حشو جبنة",
+          "detailMsg": "Large · Cheese stuffed",
+          "qty": 1,
+          "unit": 220,
+          "note": "",
+          "extras": []
+        },
+        {
+          "en": "Oriental Sausage Pasta",
+          "ar": "اورينتال سوسيدج باستا",
+          "detailAr": "فوتوتشيني · كبير",
+          "detailMsg": "Fettuccine · Large",
+          "qty": 1,
+          "unit": 170,
+          "note": "",
+          "extras": []
+        },
+        {
+          "en": "Curry Shrimp Pasta",
+          "ar": "كاري باستا جمبري",
+          "detailAr": "فوتوتشيني · وسط",
+          "detailMsg": "Fettuccine · Medium",
+          "qty": 1,
+          "unit": 265,
+          "note": "",
+          "extras": []
+        },
+        {
+          "en": "Frise",
+          "ar": "",
+          "detailAr": "",
+          "detailMsg": "",
+          "qty": 3,
+          "unit": 40,
+          "note": "",
+          "extras": []
+        },
+        {
+          "en": "Cheese Frise",
+          "ar": "",
+          "detailAr": "",
+          "detailMsg": "",
+          "qty": 1,
+          "unit": 70,
+          "note": "",
+          "extras": []
+        },
+        {
+          "en": "Mozzarella Sticks",
+          "ar": "",
+          "detailAr": "",
+          "detailMsg": "",
+          "qty": 1,
+          "unit": 60,
+          "note": "",
+          "extras": []
+        }
+      ],
+      "subtotal": 2805,
+      "deliveryFee": 20,
+      "total": 2825,
+      "currency": "EGP",
+      "payment": "cod",
+      "paymentLabel": "كاش عند الاستلام",
+      "note": "",
+      "adjusted": false,
+      "cancelReason": ""
+    }
+  ]
+}
