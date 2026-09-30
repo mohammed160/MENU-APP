@@ -3,5 +3,8 @@ data/*.tmp
 menu-app/
 .DS_Store
 *.log
+.env
+.env.local
+
 
 

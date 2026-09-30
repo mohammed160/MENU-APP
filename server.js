@@ -6,12 +6,30 @@ const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
 
+const ROOT = __dirname;
+const envPath = path.join(ROOT, '.env');
+if (fs.existsSync(envPath)) {
+  try {
+    fs.readFileSync(envPath, 'utf8').split(/\r?\n/).forEach(l => {
+      const line = l.trim();
+      if (!line || line.startsWith('#')) return;
+      const idx = line.indexOf('=');
+      if (idx > 0) {
+        const k = line.slice(0, idx).trim();
+        let v = line.slice(idx + 1).trim();
+        if ((v.startsWith('"') && v.endsWith('"')) || (v.startsWith("'") && v.endsWith("'"))) v = v.slice(1, -1);
+        if (!process.env[k]) process.env[k] = v;
+      }
+    });
+  } catch {}
+}
+
 const PORT = process.env.PORT || 3000;
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || 'admin123';
 const SECRET = process.env.SESSION_SECRET || crypto.createHash('sha256').update('menu-secret:' + ADMIN_PASSWORD).digest('hex');
-const ROOT = __dirname;
 const DATA_FILE = path.join(ROOT, 'data', 'menu.json');
 const PUBLIC = path.join(ROOT, 'public');
+const UPLOADS = path.join(PUBLIC, 'uploads');
 try { fs.mkdirSync(UPLOADS, { recursive: true }); } catch {}
 if (!fs.existsSync(DATA_FILE)) {
   try { require('child_process').execFileSync(process.execPath, [path.join(ROOT, 'scripts', 'seed.js')], { stdio: 'inherit' }); } catch {}
