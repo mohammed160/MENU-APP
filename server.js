@@ -547,9 +547,8 @@ app.delete('/api/admin/orders/:id', requireAuth, (req, res) => {
 
 /* ---------- static ---------- */
 app.use('/uploads', express.static(UPLOADS, { maxAge: '365d', immutable: true }));
-app.use('/admin', (req, res, next) => { res.setHeader('X-Robots-Tag', 'noindex'); next(); });
 app.use(express.static(PUBLIC, { extensions: ['html'], setHeaders: (res, p) => { if (/\.(html|js|css)$/.test(p)) res.setHeader('Cache-Control', 'no-cache'); } }));
-app.get('/admin', (req, res) => res.sendFile(path.join(PUBLIC, 'admin', 'index.html')));
+app.get(['/admin', '/admin/'], (req, res) => res.sendFile(path.join(PUBLIC, 'admin', 'index.html')));
 
 if (!process.env.VERCEL) {
   app.listen(PORT, () => {
