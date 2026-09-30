@@ -12,9 +12,10 @@ const SECRET = process.env.SESSION_SECRET || crypto.createHash('sha256').update(
 const ROOT = __dirname;
 const DATA_FILE = path.join(ROOT, 'data', 'menu.json');
 const PUBLIC = path.join(ROOT, 'public');
-const UPLOADS = path.join(PUBLIC, 'uploads');
-fs.mkdirSync(UPLOADS, { recursive: true });
-if (!fs.existsSync(DATA_FILE)) require('child_process').execFileSync(process.execPath, [path.join(ROOT, 'scripts', 'seed.js')], { stdio: 'inherit' });
+try { fs.mkdirSync(UPLOADS, { recursive: true }); } catch {}
+if (!fs.existsSync(DATA_FILE)) {
+  try { require('child_process').execFileSync(process.execPath, [path.join(ROOT, 'scripts', 'seed.js')], { stdio: 'inherit' }); } catch {}
+}
 
 const app = express();
 app.disable('x-powered-by');
@@ -532,7 +533,11 @@ app.use('/admin', (req, res, next) => { res.setHeader('X-Robots-Tag', 'noindex')
 app.use(express.static(PUBLIC, { extensions: ['html'], setHeaders: (res, p) => { if (/\.(html|js|css)$/.test(p)) res.setHeader('Cache-Control', 'no-cache'); } }));
 app.get('/admin', (req, res) => res.sendFile(path.join(PUBLIC, 'admin', 'index.html')));
 
-app.listen(PORT, () => {
-  console.log(`\n  Menu:       http://localhost:${PORT}\n  Dashboard:  http://localhost:${PORT}/admin`);
-  if (!process.env.ADMIN_PASSWORD) console.log('\n  ⚠  Using the default password "admin123". Set your own:  ADMIN_PASSWORD=yourpassword npm start\n');
-});
+if (!process.env.VERCEL) {
+  app.listen(PORT, () => {
+    console.log(`\n  Menu:       http://localhost:${PORT}\n  Dashboard:  http://localhost:${PORT}/admin`);
+    if (!process.env.ADMIN_PASSWORD) console.log('\n  ⚠  Using the default password "admin123". Set your own:  ADMIN_PASSWORD=yourpassword npm start\n');
+  });
+}
+
+module.exports = app;
